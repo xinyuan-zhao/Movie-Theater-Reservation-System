@@ -87,4 +87,12 @@ The ERD can be found at the end of this document.
 - Theater_room to Schedule: One to many; a room can have multiple schedules.
 
 ## Data Sources
-Data will be initially collected from [IMDb Dataset on Kaggle](https://www.kaggle.com/datasets/komalkhetlani/imdb-dataset). We will extract 100 lines of data, focusing on
+Data will be initially collected from [IMDb Dataset on Kaggle](https://www.kaggle.com/datasets/komalkhetlani/imdb-dataset). We will extract 100 lines of data, focusing on relevant columns, and supplement with self-generated customer and admin data. The process involves merging CSV files and fixing any incorrect or missing data.
+
+## Libraries and Tools
+- **Python:** Primary language for backend development.
+- **SQLAlchemy:** SQL toolkit and ORM for database operations.
+- **MySQL:** Chosen relational database management system.
+- **PyMySQL:** Python MySQL client library for executing database queries.
+- **pytest:** For testing and code quality assurance.
+
