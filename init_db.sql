@@ -70,9 +70,7 @@ CREATE TABLE Schedule (
     schedule_id INT PRIMARY KEY,
     time_slot TIME,
     date DATE,
-    movie_id INT,
     room_id INT,
-    FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
     FOREIGN KEY (room_id) REFERENCES Theater_room(room_id)
 );
 
@@ -92,8 +90,6 @@ CREATE TABLE Ticket (
 CREATE TABLE Payment (
     payment_id INT PRIMARY KEY,
     card_type VARCHAR(255),
-    time TIME,
-    payment_amount DECIMAL,
     ticket_id INT,
     FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id)
 );

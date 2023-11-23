@@ -55,18 +55,20 @@ if __name__ == "__main__":
     List of column names in the same order as in your CSV
     insert_csv_to_mysql(csv_file_path, table_name, column_names)
     """
-
-
-
+    # insert_csv_to_mysql('./data/admin.csv', 'admin', ['admin_id', 'hire_date', 'admin_name', 'password'], ['hire_date'])
+    # insert_csv_to_mysql('./data/customer.csv', 'customer', ['customer_id', 'password', 'email']) 
+    # insert_csv_to_mysql('./data/theater.csv', 'theater', ['theater_id', 'name', 'location']) 
+    # insert_csv_to_mysql('./data/movie.csv', 'movie', ['movie_id', 'title', 'director','release_date', 'duration'], ['release_date']) 
+    # insert_csv_to_mysql('./data/modifyMovie.csv', 'modifyMovie', ['admin_id', 'movie_id']) 
+    # insert_csv_to_mysql('./data/theater_room.csv', 'theater_room', ['room_id', 'available_seat','theater_id']) 
+    # insert_csv_to_mysql('./data/review.csv', 'review', ['review_id', 'rating','comment','date', 'customer_id', 'movie_id'], ['date']) 
+    # insert_csv_to_mysql('./data/card.csv', 'card', ['card_id', 'register_date','member_points','customer_id'], ['register_date']) 
+    # insert_csv_to_mysql('./data/schedule.csv', 'schedule', ['schedule_id', 'time_slot','date','room_id'], ['date']) 
     
-    # insert_csv_to_mysql('./admin.csv', 'admin', ['admin_id', 'hire_date', 'admin_name', 'password'], ['hire_date'])
-    insert_csv_to_mysql('./customer.csv', 'customer', ['customer_id', 'password', 'email']) 
-    insert_csv_to_mysql('./theater.csv', 'theater', ['theater_id', 'name', 'location']) 
-    insert_csv_to_mysql('./movie.csv', 'movie', ['movie_id', 'title', 'director','release_date', 'duration'], ['release_date']) 
-    
-    insert_csv_to_mysql('./modifyMovie.csv', 'modifyMovie', ['admin_id', 'movie_id']) 
-    
-    insert_csv_to_mysql('./theater_room.csv', 'theater_room', ['room_id', 'available_seat','theater_id']) 
+    # insert_csv_to_mysql('./data/ticket.csv', 'ticket', ['ticket_id','price','seat_num','card_id','schedule_id','movie_id']) 
+    # insert_csv_to_mysql('./data/buyTicket.csv', 'buyTicket', ['ticket_id','customer_id']) 
+    # insert_csv_to_mysql('./data/payment.csv', 'payment', ['payment_id','card_type','ticket_id']) 
+    insert_csv_to_mysql('./data/performance.csv', 'performance', ['performance_id','month','year','num_of_viewers','revenues','theater_id']) 
 
 
 
