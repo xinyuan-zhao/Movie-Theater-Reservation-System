@@ -29,16 +29,18 @@ CREATE TABLE Review (
     rating INT,
     comment TEXT,
     date DATE,
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES Customer(customer_id)
+    movie_id INT,
+    customer_id INT,
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
+    FOREIGN KEY (movie_id) REFERENCES Movie(movie_id)
 );
 
 CREATE TABLE Card (
     card_id INT PRIMARY KEY,
     register_date DATE,
     member_points INT,
-    user_id INT,
-    FOREIGN KEY (user_id) REFERENCES Customer(customer_id)
+    customer_id INT,
+    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
 
 CREATE TABLE Theater (
