@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
-import UserLogin from './UserLogin';
-import UserSignUp from './UserSignUp';
-import AdminLogin from './AdminLogin';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import SignIn from './pages/SignIn';
+import Dashboard from './pages/Dashboard';
 
 const App = () => {
-  const [active, setActive] = useState('userLogin');
-
   return (
-    <div>
-      <header>
-        <button onClick={() => setActive('userLogin')}>User Login</button>
-        <button onClick={() => setActive('userSignUp')}>User Sign Up</button>
-        <button onClick={() => setActive('adminLogin')}>Admin Login</button>
-      </header>
-      
-      {active === 'userLogin' && <UserLogin />}
-      {active === 'userSignUp' && <UserSignUp />}
-      {active === 'adminLogin' && <AdminLogin />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 };
 
