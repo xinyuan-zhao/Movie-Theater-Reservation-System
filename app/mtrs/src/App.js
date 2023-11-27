@@ -1,24 +1,12 @@
-import React, { useState } from 'react';
-import UserLogin from './UserLogin';
-import UserSignUp from './UserSignUp';
-import AdminLogin from './AdminLogin';
+import React from 'react';
+import SignIn from './SignIn';
 
-const App = () => {
-  const [active, setActive] = useState('userLogin');
-
+function App() {
   return (
     <div>
-      <header>
-        <button onClick={() => setActive('userLogin')}>User Login</button>
-        <button onClick={() => setActive('userSignUp')}>User Sign Up</button>
-        <button onClick={() => setActive('adminLogin')}>Admin Login</button>
-      </header>
-      
-      {active === 'userLogin' && <UserLogin />}
-      {active === 'userSignUp' && <UserSignUp />}
-      {active === 'adminLogin' && <AdminLogin />}
+      <SignIn />
     </div>
   );
-};
+}
 
 export default App;
