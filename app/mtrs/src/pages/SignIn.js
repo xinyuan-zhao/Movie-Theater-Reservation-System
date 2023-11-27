@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SwitchRole from './components/SwitchRole';
+import SwitchRole from '../components/SwitchRole';
 import { Link, TextField, Typography, Button, Grid, Box, CssBaseline, Paper, Avatar, FormControlLabel, Checkbox } from '@mui/material';
 function Signin() {
   const [email, setEmail] = useState('');
