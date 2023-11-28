@@ -9,21 +9,19 @@ const columns = [
   { field: 'duration', headerName: 'Duration', editable: true, width: 100 },
 ];
 
-export default function DataTable( {rows} ) {
+export default function MovieDataTable( {rows} ) {
   return (
-    <div style={{ height: '100%', width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
+            paginationModel: { page: 0, pageSize: 7 },
           },
         }}
-        pageSizeOptions={[10, 20, 30, 40, 50]}
+        pageSizeOptions={[7, 14]}
         checkboxSelection
         getRowId={(row) => row.movie_id}
       />
-    </div>
   );
 }

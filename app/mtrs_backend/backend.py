@@ -103,6 +103,48 @@ def get_movies():
         cursor.close()
         db.close()
 
+@app.route('/orders', methods=['GET'])
+def get_orders():
+    try:
+        db = mysql.connector.connect(
+            host="localhost",
+            user="mtrs",
+            password="ds5110",
+            database="smartcine"
+        )
+        cursor = db.cursor(dictionary=True)
+
+        cursor.execute('SELECT * FROM payment')
+        movies = cursor.fetchall()
+        return jsonify(movies), 200
+    except mysql.connector.Error as err:
+        app.logger.error(f'Error: {err}')
+        return jsonify({'message': f'Database connection error: {err}'}), 500
+    finally:
+        cursor.close()
+        db.close()
+
+@app.route('/customers', methods=['GET'])
+def get_customers():
+    try:
+        db = mysql.connector.connect(
+            host="localhost",
+            user="mtrs",
+            password="ds5110",
+            database="smartcine"
+        )
+        cursor = db.cursor(dictionary=True)
+
+        cursor.execute('SELECT * FROM customer')
+        movies = cursor.fetchall()
+        return jsonify(movies), 200
+    except mysql.connector.Error as err:
+        app.logger.error(f'Error: {err}')
+        return jsonify({'message': f'Database connection error: {err}'}), 500
+    finally:
+        cursor.close()
+        db.close()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
