@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SwitchRole from '../components/SwitchRole';
-import { Link, TextField, Typography, Button, Grid, Box, CssBaseline, Paper, Avatar, FormControlLabel, Checkbox } from '@mui/material';
-function SignIn() {
+import { Link, TextField, Typography, Button, Grid, Box, CssBaseline, Paper, Avatar} from '@mui/material';
+function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignIn = async (event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
     try {
       if (email.includes("@")){
-        await axios.post('http://localhost:5000/signin', { email, password });
-        alert('Welcome User!');
-        window.location.href = 'http://localhost:3000/main';
-      } else {
-        await axios.post('http://localhost:5000/admin/signin', { email, password });
-        alert('Welcome Admin!');
-        window.location.href = 'http://localhost:3000/dashboard';
+        await axios.post('http://localhost:5000/signup', { email, password });
+        alert('Sign up successful, redirecting you to sign in page...');
+        window.location.href = 'http://localhost:3000/';
       }
     } catch (error) {
-      alert('Login failed!');
+      alert('SignUp failed!');
     }
   };
 
@@ -51,11 +46,10 @@ function SignIn() {
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'green' }}></Avatar>
-          <SwitchRole/>
           <Typography component="h1" variant="h5">
-            Sign in
+            Sign up to become a MTRS member!
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSignIn} sx={{ mt: 1 }}>
+          <Box component="form" noValidate onSubmit={handleSignUp} sx={{ mt: 1 }}>
             <TextField
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -80,27 +74,18 @@ function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Sign Up
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link href="signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/" variant="body2">
+                  {"Already have an account? Sign In"}
                 </Link>
               </Grid>
             </Grid>
@@ -111,4 +96,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;

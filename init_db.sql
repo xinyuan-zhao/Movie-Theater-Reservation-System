@@ -4,14 +4,14 @@ USE SmartCine;
 
 
 CREATE TABLE Admin (
-    admin_id INT PRIMARY KEY,
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
     hire_date DATE,
     admin_name VARCHAR(255),
     password VARCHAR(255)
 );
 
 CREATE TABLE Movie (
-    movie_id INT PRIMARY KEY,
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     director VARCHAR(255),
     release_date DATE,
@@ -19,13 +19,13 @@ CREATE TABLE Movie (
 );
 
 CREATE TABLE Customer (
-    customer_id INT PRIMARY KEY,
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
     password VARCHAR(255),
     email VARCHAR(255)
 );
 
 CREATE TABLE Review (
-    review_id INT PRIMARY KEY,
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
     rating INT,
     comment TEXT,
     date DATE,
@@ -36,7 +36,7 @@ CREATE TABLE Review (
 );
 
 CREATE TABLE Card (
-    card_id INT PRIMARY KEY,
+    card_id INT AUTO_INCREMENT PRIMARY KEY,
     register_date DATE,
     member_points INT,
     customer_id INT,
@@ -44,13 +44,13 @@ CREATE TABLE Card (
 );
 
 CREATE TABLE Theater (
-    theater_id INT PRIMARY KEY,
+    theater_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     location VARCHAR(255)
 );
 
 CREATE TABLE Performance (
-    performance_id INT PRIMARY KEY,
+    performance_id INT AUTO_INCREMENT PRIMARY KEY,
     month INT,
     year INT,
     num_of_viewers INT,
@@ -60,14 +60,14 @@ CREATE TABLE Performance (
 );
 
 CREATE TABLE Theater_room (
-    room_id INT PRIMARY KEY,
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
     available_seat INT,
     theater_id INT,
     FOREIGN KEY (theater_id) REFERENCES Theater(theater_id)
 );
 
 CREATE TABLE Schedule (
-    schedule_id INT PRIMARY KEY,
+    schedule_id INT AUTO_INCREMENT PRIMARY KEY,
     time_slot TIME,
     date DATE,
     room_id INT,
@@ -75,7 +75,7 @@ CREATE TABLE Schedule (
 );
 
 CREATE TABLE Ticket (
-    ticket_id INT PRIMARY KEY,
+    ticket_id INT AUTO_INCREMENT PRIMARY KEY,
     price DECIMAL,
     seat_num VARCHAR(255),
     added_points INT,
@@ -88,7 +88,7 @@ CREATE TABLE Ticket (
 );
 
 CREATE TABLE Payment (
-    payment_id INT PRIMARY KEY,
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
     card_type VARCHAR(255),
     ticket_id INT,
     FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id)
@@ -97,7 +97,7 @@ CREATE TABLE Payment (
 CREATE TABLE BuyTicket (
     ticket_id INT,
     customer_id INT,
-    PRIMARY KEY (ticket_id, customer_id),
+    AUTO_INCREMENT PRIMARY KEY (ticket_id, customer_id),
     FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id),
     FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
 );
@@ -105,7 +105,7 @@ CREATE TABLE BuyTicket (
 CREATE TABLE ModifyMovie (
     admin_id INT,
     movie_id INT,
-    PRIMARY KEY (admin_id, movie_id),
+    AUTO_INCREMENT PRIMARY KEY (admin_id, movie_id),
     FOREIGN KEY (movie_id) REFERENCES Movie(movie_id),
     FOREIGN KEY (admin_id) REFERENCES Admin(admin_id)
 );
