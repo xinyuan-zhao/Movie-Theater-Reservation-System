@@ -12,10 +12,11 @@ function SignUp() {
         await axios.post('http://localhost:5000/signup', { email, password });
         alert('Sign up successful, redirecting you to sign in page...');
         window.location.href = 'http://localhost:3000/';
+      } else {
+        alert('Please fill in a valid email address.');
       }
     } catch (error) {
-        alert('Sign up successful, redirecting you to sign in page...');
-        window.location.href = 'http://localhost:3000/';
+        alert('Sign up failed, this email has already been taken.');
     }
   };
 

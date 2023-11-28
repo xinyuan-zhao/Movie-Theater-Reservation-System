@@ -74,12 +74,10 @@ def signup():
         user = cursor.fetchone()
         if user:
             return jsonify({'message': 'Email already exists'}), 409
-
-        cursor.execute('INSERT INTO customer (email, password) VALUES (%s, %s)', (email, password))
-        db.commit()
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")  # Log the error to the console
-        return jsonify({'message': f'Database connection error: {err}'}), 500
+        else:
+            cursor.execute('INSERT INTO customer (email, password) VALUES (%s, %s)', (email, password))
+            db.commit()
+            return jsonify({'message': 'User signup successful'}), 200
     finally:
         cursor.close()
         db.close()
