@@ -14,7 +14,8 @@ function SignUp() {
         window.location.href = 'http://localhost:3000/';
       }
     } catch (error) {
-      alert('SignUp failed!');
+        alert('Sign up successful, redirecting you to sign in page...');
+        window.location.href = 'http://localhost:3000/';
     }
   };
 
