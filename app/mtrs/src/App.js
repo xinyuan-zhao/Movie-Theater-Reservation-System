@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import MovieDashboard from './pages/MovieDashboard';
 import OrderDashboard from './pages/OrderDashboard';
 import CustomerDashboard from './pages/CustomerDashboard';
+import ReportDashboard from './pages/ReportDashboard';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/dashboard/movie" element={<MovieDashboard />} />
         <Route path="/dashboard/order" element={<OrderDashboard />} />
         <Route path="/dashboard/customer" element={<CustomerDashboard />} />
+        <Route path="/dashboard/report" element={<ReportDashboard />} />
       </Routes>
     </Router>
   );

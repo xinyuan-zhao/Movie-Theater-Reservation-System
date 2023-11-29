@@ -29,7 +29,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Customers" />
     </ListItemButton>
-    <ListItemButton href="/dashboard/reports">
+    <ListItemButton href="/dashboard/report">
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>

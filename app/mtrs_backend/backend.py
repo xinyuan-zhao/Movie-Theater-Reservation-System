@@ -146,5 +146,33 @@ def get_customers():
         db.close()
 
 
+@app.route('/runsql', methods=['POST'])
+def run_sql():
+    data = request.json
+    sql_command = data.get('sql')
+
+    if not sql_command:
+        return jsonify({'error': 'No SQL command provided'}), 400
+
+    try:
+        # Connect to your database
+        db = mysql.connector.connect(
+            host="localhost",
+            user="mtrs",
+            password="ds5110",
+            database="smartcine"
+        )
+
+        cursor = db.cursor()
+        cursor.execute(sql_command)
+        results = cursor.fetchall()
+        return jsonify(results)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cursor.close()
+        db.close()
+
+
 if __name__ == '__main__':
     app.run(debug=True)
