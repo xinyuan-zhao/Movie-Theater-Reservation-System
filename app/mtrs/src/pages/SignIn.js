@@ -12,11 +12,10 @@ function SignIn() {
       if (email.includes("@")){
         await axios.post('http://localhost:5000/signin', { email, password });
         alert('Welcome User!');
-        window.location.href = 'http://localhost:3000/main';
       } else {
         await axios.post('http://localhost:5000/admin/signin', { email, password });
         alert('Welcome Admin!');
-        window.location.href = 'http://localhost:3000/dashboard';
+        window.location.href = 'http://localhost:3000/dashboard/movie';
       }
     } catch (error) {
       alert('Login failed!');
