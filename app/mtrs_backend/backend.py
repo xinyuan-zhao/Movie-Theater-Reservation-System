@@ -155,7 +155,6 @@ def run_sql():
         return jsonify({'error': 'No SQL command provided'}), 400
 
     try:
-        # Connect to your database
         db = mysql.connector.connect(
             host="localhost",
             user="mtrs",
