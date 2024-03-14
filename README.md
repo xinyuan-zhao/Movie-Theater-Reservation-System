@@ -36,7 +36,7 @@ Below is the Entity-Relationship Diagram (ERD) representing the structure of the
 
 ## MySQL Database Implementation
 The following screenshots showcase the MySQL database implementation for our project. They include examples of table creation, data insertion, and query execution. These visual aids provide a glimpse into the practical application of our database design and the interaction with the data stored within.
-![image](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/730a30e5-7e7d-4b8c-a93d-70a45b89f1e6)
-![image](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/d9ba1387-b962-4638-b585-965ace56055c)
+![Screen Shot 2024-03-13 at 22 55 14](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/a2b4b21b-3761-43a7-8fda-80f391ba8bc1)
+
 
 
