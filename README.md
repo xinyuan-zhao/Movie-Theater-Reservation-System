@@ -28,3 +28,15 @@ SmartCine is an intuitive movie theater reservation system designed to enhance t
 5. Go to the .\app\mtrs_backend folder
 6. Run the backend.py to access the backend Python Flask program
 7. You can create new accounts or use accounts in database to login to the system
+
+
+## Entity-Relationship Diagram (ERD)
+Below is the Entity-Relationship Diagram (ERD) representing the structure of the database for this project. The ERD illustrates the various entities, their attributes, and the relationships between them. This visual representation helps in understanding the database schema and the connections between different data elements.
+![image](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/e3778cc0-6b3b-4168-a0ae-ec52cba93554)
+
+## MySQL Database Implementation
+The following screenshots showcase the MySQL database implementation for our project. They include examples of table creation, data insertion, and query execution. These visual aids provide a glimpse into the practical application of our database design and the interaction with the data stored within.
+![image](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/730a30e5-7e7d-4b8c-a93d-70a45b89f1e6)
+![image](https://github.com/xinyuan-zhao/Movie-Theater-Reservation-System/assets/55670831/d9ba1387-b962-4638-b585-965ace56055c)
+
+
